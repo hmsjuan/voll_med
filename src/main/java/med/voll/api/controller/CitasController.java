@@ -32,7 +32,7 @@ public class CitasController {
 
 
         return ResponseEntity.ok(new DatosAgendarCitas(
-                null, null, null));
+                null, null, null, null));
 
     }
 
