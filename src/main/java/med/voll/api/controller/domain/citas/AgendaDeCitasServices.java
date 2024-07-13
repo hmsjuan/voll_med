@@ -34,7 +34,7 @@ public class AgendaDeCitasServices {
 
         }
 
-
+//Validacion de integridad  validac
         var paciente = pacienteRepository.getReferenceById(datosAgendarCitas.idPaciente());
 
         var medico =  seleccionarMedico(datosAgendarCitas);
@@ -42,6 +42,8 @@ public class AgendaDeCitasServices {
           var fecha = datosAgendarCitas.fecha();
 
         var cita = new Citas(null, paciente, medico, fecha, datosAgendarCitas.especialidad());
+
+        consultaRepository.save(cita);
 
     }
 
