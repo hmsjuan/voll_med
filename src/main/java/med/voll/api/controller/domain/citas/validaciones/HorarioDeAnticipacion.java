@@ -2,11 +2,13 @@ package med.voll.api.controller.domain.citas.validaciones;
 
 import med.voll.api.controller.domain.citas.DatosAgendarCitas;
 import med.voll.api.controller.infra.errores.ValidacionDeIntegridad;
+import org.springframework.stereotype.Component;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-public class HorarioDeAnticipacion {
+@Component
+public class HorarioDeAnticipacion implements ValidadorDeCitas {
 
     public void validar(DatosAgendarCitas datosAgendarCitas) {
         var ahora = LocalDateTime.now();
@@ -19,3 +21,4 @@ public class HorarioDeAnticipacion {
 
     }
 }
+

@@ -1,5 +1,6 @@
 package med.voll.api.controller.domain.citas;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -23,22 +24,13 @@ public class Citas {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_paciente")
+    @JoinColumn(name = "paciente_id")
     private Paciente paciente;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_medico")
+    @JoinColumn(name = "medico_id")
     private Medico medico;
 
+
     private LocalDateTime fecha;
-    private Especialidad especialidad;
-
-    public Citas(Paciente paciente, Medico medico, LocalDateTime fecha, Especialidad especialidad) {
-        this.paciente = paciente;
-        this.medico = medico;
-        this.fecha = fecha;
-        this.especialidad = especialidad;
-
-
-    }
 }

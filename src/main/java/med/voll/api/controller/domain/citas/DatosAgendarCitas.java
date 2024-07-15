@@ -11,11 +11,12 @@ public record DatosAgendarCitas(
         @NotNull
         Long idPaciente,
         Long idMedico,
-        @NotNull
+
         @Future
-        @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+        @NotNull
         LocalDateTime fecha,
-        Especialidad especialidad)
+        Especialidad especialidad
+        )
         {
 
 }

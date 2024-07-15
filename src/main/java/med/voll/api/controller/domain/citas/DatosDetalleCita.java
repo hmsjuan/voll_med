@@ -9,9 +9,12 @@ public record DatosDetalleCita(
     Long id,
     Long idPaciente,
     Long idMedico,
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
-    LocalDateTime fecha,
-    Especialidad especialidad
-
+    LocalDateTime fecha
 ) {
+    public DatosDetalleCita(Citas cita) {
+        this(cita.getId(),
+                cita.getPaciente().getId(),
+                cita.getMedico().getId(),
+                cita.getFecha());
+    }
 }

@@ -26,7 +26,6 @@ public class Paciente {
 
     @Embedded
     private Direccion direcion;
-
     private Boolean activo = true;
 
     public Paciente(DatosRegistroPaciente datosRegistroPaciente) {

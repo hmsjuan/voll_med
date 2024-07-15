@@ -7,8 +7,10 @@ import med.voll.api.controller.domain.paciente.Paciente;
 import med.voll.api.controller.domain.paciente.PacienteRepository;
 import med.voll.api.controller.infra.errores.ValidacionDeIntegridad;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-public class PacienteActivo {
+@Component
+public class PacienteActivo implements ValidadorDeCitas {
 
     @Autowired
     private PacienteRepository pacienteRepository;

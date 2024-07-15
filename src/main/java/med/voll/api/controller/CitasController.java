@@ -18,21 +18,19 @@ public class CitasController {
 
 
     @Autowired
-    private AgendaDeCitasServices agendaDeCitasServices;
+    private AgendaDeCitasServices
+            agendaDeCitasServices;
 
     @PostMapping
     @Transactional
 
-    public ResponseEntity<DatosAgendarCitas> agendarCitas(
+    public ResponseEntity agendarCitas(
             @RequestBody @Valid DatosAgendarCitas datosAgendarCitas
     ) {
 
-        agendaDeCitasServices.agendarCitas(datosAgendarCitas);
+  var response = agendaDeCitasServices.agendarCitas(datosAgendarCitas);
 
-
-
-        return ResponseEntity.ok(new DatosAgendarCitas(
-                null, null, null, null));
+        return ResponseEntity.ok(response);
 
     }
 
