@@ -1,5 +1,6 @@
 package med.voll.api.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import med.voll.api.controller.domain.citas.AgendaDeCitasServices;
@@ -23,7 +24,7 @@ public class CitasController {
 
     @PostMapping
     @Transactional
-
+    @SecurityRequirement(name = "bearer-key")
     public ResponseEntity agendarCitas(
             @RequestBody @Valid DatosAgendarCitas datosAgendarCitas
     ) {

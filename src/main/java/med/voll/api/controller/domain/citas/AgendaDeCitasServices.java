@@ -52,13 +52,15 @@ public class AgendaDeCitasServices {
 
         var fecha = datosAgendarCitas.fecha();
 
-        var cita = new Citas(null, paciente, medico, fecha);
+        var cita = new Citas(paciente, medico, fecha);
 
         consultaRepository.save(cita);
 
         return new DatosDetalleCita(cita);
 
     }
+
+
 
     private Medico seleccionarMedico(DatosAgendarCitas datosAgendarCitas) {
         if (datosAgendarCitas.idMedico() != null) {

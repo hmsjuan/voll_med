@@ -33,4 +33,17 @@ public class Citas {
 
 
     private LocalDateTime fecha;
+/*
+    @Column(name = "motivo_cancelacion")
+    @Enumerated(EnumType.STRING)
+    private MotivoCancelacion motivoCancelacion;
+*/
+
+    public Citas(Paciente paciente, Medico medico, LocalDateTime fecha) {
+        this.id = id;
+        this.paciente = paciente;
+        this.medico = medico;
+        this.fecha = fecha;
+    }
+
 }
